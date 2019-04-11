@@ -6,3 +6,7 @@ Critères qualité
 - Arrivé au score maximum => Score en vert + verrouillage 
 - L’input fixe le score maximum (5 par défaut) 
 - Le reset remet tout à zéro •Vanilla JS only (zero librairie ou copier coller)
+
+Bonus
+- Rendre la page la plus swag possible 
+- Dark mode
