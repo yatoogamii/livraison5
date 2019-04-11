@@ -7,4 +7,47 @@
 html {
   font-size: 62.5%; }
 
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  body header {
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body header h1 {
+      font-size: 5rem; }
+  body .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+  body .container-max-score {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+    body .container-max-score .max-score {
+      font-size: 5rem; }
+  body .container-panel-score {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; }
+  body .container-panel-score__div-character-player {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  body .container-panel-score__div-character-player1 {
+    font-size: 2.5rem;
+    width: 20%; }
+  body .container-panel-score__div-character-player2 {
+    font-size: 2.5rem;
+    width: 20%; }
+
 /*# sourceMappingURL=style.css.map */

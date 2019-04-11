@@ -4,20 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Score Keeper</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
   </head>
   <body>
     <header>
       <h1>Score Keeper</h1>
     </header>
-    <section class="nes-container with-title is-centered">
-      <div class="nes-field">
-        <label for="name_field">Your name</label>
-        <input type="number" id="name_field" class="nes-input">
-      </div>
-      <p><span class="max-score">5</span><span class="icon-trophy"><i class="nes-icon trophy is-large"></i></span></p>
-    </section>
+
+    <main class="container">
+
+      <article class="nes-container is-centered container-max-score">
+        <div class="nes-field container-input-max-score">
+          <label for="name_field">Max score</label>
+          <input type="number" id="name_field" class="nes-input input-max-score" value="5">
+        </div>
+        <p><span class="max-score">5</span><span class="icon-trophy"><i class="nes-icon trophy is-large"></i></span></p>
+      </article>
+
+      <article class="container-panel-score">
+        <div class="container-panel-score__div-character-player">
+          <div class="container-panel-score__div-character-player1">
+            <p><span class="score-player1">0</span></p>
+            <i class="nes-mario"></i>
+          </div>
+          <p>VS</p>
+          <div class="container-panel-score__div-character-player2">
+            <p><span class="score-player2">0</span></p>
+            <i class="nes-kirby"></i>
+          </div>
+        </div>
+      </article>
+
+      <article class="nes-container is-centered container-button">
+        <div class="container-button-player">
+          <button type="button" class="nes-btn button-player">Player 1</button>
+          <button type="button" class="nes-btn button-player">Player 2</button>
+        </div>
+        <div class="container-button-reset">
+          <button type="button" class="nes-btn is-error button-reset">Reset</button>
+        </div>
+      </article>
+
+    </main>
   </body>
 </html>
