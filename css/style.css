@@ -74,6 +74,7 @@ body .container-panel-score {
 }
 body .container-panel-score__div-character-player {
   width: 100%;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
 }
