@@ -1,5 +1,4 @@
-# livraison5
-
+# livraison 5 - Score Keeper
 Critères qualité
 - 2 compteurs distincts (joueur 1 et joueur 2) 
 - 3 boutons (Joueur 1 + Joueur 2 + Reset) 
