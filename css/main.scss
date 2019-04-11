@@ -35,25 +35,69 @@ body {
     }
   }
 
+////////////////////////////////////////////////////////////////////////
+//                             components                             //
+////////////////////////////////////////////////////////////////////////
+
+  ////////////
+  //  main  //
+  ////////////
+
   .container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
   }
   
+  /////////////////////////
+  //  section max score  //
+  /////////////////////////
+  
   .container-max-score {
-    width: 100%;
+    width: 95%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
+    .container-input-max-score {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .input-max-score {
+        width: 50%;
+      }
+
+    }
 
     .max-score {
+      width: 25%;
       font-size: 5rem;
     }
+
+    .container-winner {
+      width: 25%;
+      .winner-player1--hidden {
+        display: none;
+      }
+      .winner-player2--hidden {
+        display: none;
+      }
+      .p-winner--hidden {
+        opacity: 0;
+      }
+    }
   }
+
+  ///////////////////////////
+  //  section panel score  //
+  ///////////////////////////
+  
 
   .container-panel-score {
     width: 100%;
@@ -67,22 +111,44 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-  }
 
-  .container-panel-score__div-character-player1 {
-    font-size: 2.5rem;
-    width: 20%;
-  }
+    .container-panel-score__div-character-player-p {
+      display: flex;
+      align-items: flex-end;
+      font-size: 5rem;
+    }
 
-  .container-panel-score__div-character-player2 {
-    font-size: 2.5rem;
-    width: 20%;
+    .container-panel-score__div-character-player1 {
+      font-size: 2.5rem;
+      width: 20%;
+    }
+
+    .container-panel-score__div-character-player2 {
+      font-size: 2.5rem;
+      width: 20%;
+    }
   }
 }
 
+  //////////////////////
+  //  section button  //
+  //////////////////////
+  
+  .container-button {
+    position: relative;
+    bottom: 5rem;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
 
-////////////////////////////////////////////////////////////////////////
-//                             components                             //
-////////////////////////////////////////////////////////////////////////
+    .container-button-player {
+      width: 100%;
+    }
+    .container-button-reset {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+
 
 

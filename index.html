@@ -21,6 +21,11 @@
           <input type="number" id="name_field" class="nes-input input-max-score" value="5">
         </div>
         <p><span class="max-score">5</span><span class="icon-trophy"><i class="nes-icon trophy is-large"></i></span></p>
+        <div class="container-winner">
+          <p class="p-winner p-winner--hidden">Winner is</p>
+          <i class="nes-mario winner-player1 winner-player1--hidden">win</i>
+          <i class="nes-kirby winner-player2 winner-player2--hidden">win</i>
+        </div>
       </article>
 
       <article class="container-panel-score">
@@ -29,7 +34,7 @@
             <p><span class="score-player1">0</span></p>
             <i class="nes-mario"></i>
           </div>
-          <p>VS</p>
+          <p class="container-panel-score__div-character-player-p">VS</p>
           <div class="container-panel-score__div-character-player2">
             <p><span class="score-player2">0</span></p>
             <i class="nes-kirby"></i>
@@ -42,11 +47,14 @@
           <button type="button" class="nes-btn button-player">Player 1</button>
           <button type="button" class="nes-btn button-player">Player 2</button>
         </div>
+
         <div class="container-button-reset">
           <button type="button" class="nes-btn is-error button-reset">Reset</button>
         </div>
       </article>
 
     </main>
+
+    <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
