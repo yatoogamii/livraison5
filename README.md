@@ -8,5 +8,5 @@ Critères qualité
 - Le reset remet tout à zéro •Vanilla JS only (zero librairie ou copier coller)
 
 Bonus
-- Ajouter du css 
+- Ajouter du css
 - Dark mode
