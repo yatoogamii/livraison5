@@ -8,5 +8,5 @@ Critères qualité
 - Le reset remet tout à zéro •Vanilla JS only (zero librairie ou copier coller)
 
 Bonus
-- Rendre la page la plus swag possible 
+- Ajouter du css 
 - Dark mode
