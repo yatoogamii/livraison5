@@ -25,9 +25,14 @@ function verifyWinner(score, player) {
     switch (player) {
       case 'player1':
         characPlayer1.classList.remove(`winner-player1--hidden`);
+        document.getElementsByClassName('score-player1')[0].classList.add('nes-text', 'is-success');
+        document.getElementsByClassName('score-player2')[0].classList.add('nes-text', 'is-error');
         break;
       case 'player2':
         characPlayer2.classList.remove(`winner-player2--hidden`);
+        document.getElementsByClassName('score-player2')[0].classList.add('is-success');
+        document.getElementsByClassName('score-player1')[0].classList.add('is-error');
+        break;
     }
     winnerText.style.opacity="1";
     stopGame();
@@ -86,4 +91,8 @@ buttonReset.onclick = function() {
   characPlayer2.classList.add(`winner-player2--hidden`);
   winnerText.style.opacity="0";
 
+  document.getElementsByClassName('score-player1')[0].classList.remove('is-success');
+  document.getElementsByClassName('score-player1')[0].classList.remove('is-error');
+  document.getElementsByClassName('score-player2')[0].classList.remove('is-success');
+  document.getElementsByClassName('score-player2')[0].classList.remove('is-error');
 };
