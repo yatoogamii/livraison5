@@ -90,12 +90,27 @@ function resetAll() {
   document.getElementsByClassName('score-player1')[0].classList.remove('is-error');
   document.getElementsByClassName('score-player2')[0].classList.remove('is-success');
   document.getElementsByClassName('score-player2')[0].classList.remove('is-error');
+
+  //reset color in input max score
+  inputMaxScore.classList.remove('is-success');
+  inputMaxScore.value = "";
 }
 
 function changeMaxScore() {
   let valueInputMaxScore = document.getElementsByClassName('input-max-score')[0].value;
   resetAll();
   maxScore.innerHTML = valueInputMaxScore;
+  inputMaxScore.classList.remove('is-error');
+  inputMaxScore.classList.add('is-success');
+}
+
+function checkMaxScore() {
+  if(inputMaxScore.value == "" || inputMaxScore.value < 0) {
+    inputMaxScore.classList.remove('is-success');
+    inputMaxScore.classList.add('is-error');
+  }  else {
+    changeMaxScore();
+  }
 }
 ////////////////////////////////////////////////////////////////////////
 //                               event                                //
@@ -104,13 +119,14 @@ function changeMaxScore() {
 
 inputMaxScore.onkeypress = function(event) {
   if (event.which == 13 || event.keyCode == 13) {
-    changeMaxScore();
+    checkMaxScore();
   }
 };
 
 inputMaxScore.onchange = function(event) {
-  changeMaxScore();
+  checkMaxScore();
 };
+
 
 buttonPlayer1.onclick = clickButtonPlayer1;
 buttonPlayer2.onclick = clickButtonPlayer2;
