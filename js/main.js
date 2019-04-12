@@ -6,14 +6,16 @@
 
 let inputMaxScore =  document.getElementsByClassName('input-max-score')[0];
 let maxScore = document.getElementsByClassName('max-score')[0];
-let buttonPlayer1 =  document.getElementsByClassName('button-player')[0];
-let buttonPlayer2 =  document.getElementsByClassName('button-player')[1];
-let buttonReset = document.getElementsByClassName('button-reset')[0];
+const buttonPlayer1 =  document.getElementsByClassName('button-player')[0];
+const buttonPlayer2 =  document.getElementsByClassName('button-player')[1];
+let pScorePlayer1 = document.getElementsByClassName('score-player1')[0];
+let pScorePlayer2 = document.getElementsByClassName('score-player2')[0];
+const buttonReset = document.getElementsByClassName('button-reset')[0];
 let scorePlayer1 = 0;
 let scorePlayer2 = 0;
-let winnerText = document.getElementsByClassName('p-winner')[0];
-let characPlayer1 = document.getElementsByClassName('winner-player1')[0];
-let characPlayer2 = document.getElementsByClassName('winner-player2')[0];
+const winnerText = document.getElementsByClassName('p-winner')[0];
+const characPlayer1 = document.getElementsByClassName('winner-player1')[0];
+const characPlayer2 = document.getElementsByClassName('winner-player2')[0];
 
 ////////////////////////////////////////////////////////////////////////
 //                              function                              //
@@ -90,18 +92,25 @@ function resetAll() {
   document.getElementsByClassName('score-player2')[0].classList.remove('is-error');
 }
 
+function changeMaxScore() {
+  let valueInputMaxScore = document.getElementsByClassName('input-max-score')[0].value;
+  resetAll();
+  maxScore.innerHTML = valueInputMaxScore;
+}
 ////////////////////////////////////////////////////////////////////////
 //                               event                                //
 ////////////////////////////////////////////////////////////////////////
 
 
-  inputMaxScore.onkeypress = function(event) {
-    if (event.which == 13 || event.keyCode == 13) {
-      let valueInputMaxScore = document.getElementsByClassName('input-max-score')[0].value;
-      resetAll();
-      maxScore.innerHTML = valueInputMaxScore;
-    }
-  };
+inputMaxScore.onkeypress = function(event) {
+  if (event.which == 13 || event.keyCode == 13) {
+    changeMaxScore();
+  }
+};
+
+inputMaxScore.onchange = function(event) {
+  changeMaxScore();
+};
 
 buttonPlayer1.onclick = clickButtonPlayer1;
 buttonPlayer2.onclick = clickButtonPlayer2;
