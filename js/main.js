@@ -21,24 +21,34 @@ const characPlayer2 = document.getElementsByClassName('winner-player2')[0];
 //                              function                              //
 ////////////////////////////////////////////////////////////////////////
 
+
+  /////////////////////
+  //  verify Winner  //
+  /////////////////////
+  
 function verifyWinner(score, player) {
   if (score == Number(maxScore.innerHTML)) {
     switch (player) {
       case 'player1':
         characPlayer1.classList.remove(`winner-player1--hidden`);
-        document.getElementsByClassName('score-player1')[0].classList.add('nes-text', 'is-success');
-        document.getElementsByClassName('score-player2')[0].classList.add('nes-text', 'is-error');
+        pScorePlayer1.classList.add('nes-text', 'is-success');
+        pScorePlayer2.classList.add('nes-text', 'is-error');
         break;
       case 'player2':
         characPlayer2.classList.remove(`winner-player2--hidden`);
-        document.getElementsByClassName('score-player2')[0].classList.add('is-success');
-        document.getElementsByClassName('score-player1')[0].classList.add('is-error');
+        pScorePlayer2.classList.add('is-success');
+        pScorePlayer1.classList.add('is-error');
         break;
     }
     winnerText.style.opacity="1";
     stopGame();
   } 
 }
+
+/////////////////
+//  Stop Game  //
+/////////////////
+
 
 function stopGame() {
   buttonPlayer1.classList.add("is-disabled");
@@ -47,17 +57,26 @@ function stopGame() {
   buttonPlayer2.onclick = "";
 }
 
+////////////////////////
+//  Click Button 1/2  //
+////////////////////////
+
 function clickButtonPlayer1() {
   scorePlayer1++;
   verifyWinner(scorePlayer1, "player1");
-  document.getElementsByClassName('score-player1')[0].innerHTML = scorePlayer1; 
+  pScorePlayer1.innerHTML = scorePlayer1; 
 }
 
 function clickButtonPlayer2() {
   scorePlayer2++;
   verifyWinner(scorePlayer2, "player2");
-  document.getElementsByClassName('score-player2')[0].innerHTML = scorePlayer2; 
+  pScorePlayer2.innerHTML = scorePlayer2; 
 }
+
+///////////////////
+//  Reset Score  //
+///////////////////
+
 
 function resetScore() {
 
@@ -66,49 +85,83 @@ function resetScore() {
 
   maxScore.innerHTML = "5";
 
-  document.getElementsByClassName('score-player1')[0].innerHTML = scorePlayer1; 
-  document.getElementsByClassName('score-player2')[0].innerHTML = scorePlayer2; 
+  pScorePlayer1.innerHTML = scorePlayer1; 
+  pScorePlayer2.innerHTML = scorePlayer2; 
 }
 
-function resetAll() {
+////////////////////
+//  Reset Button  //
+////////////////////
 
-  resetScore();
 
-  //reset onclick for button
+function resetButton() {
+  
   buttonPlayer1.onclick = clickButtonPlayer1;
   buttonPlayer2.onclick = clickButtonPlayer2;
 
-
-  //reset button player 
   buttonPlayer1.classList.remove("is-disabled");
   buttonPlayer2.classList.remove("is-disabled");
+}
 
-  //reset winner character
+//////////////////////////////
+//  Reset Winner Character  //
+//////////////////////////////
+
+function resetWinnerChara() {
   characPlayer1.classList.add(`winner-player1--hidden`);
   characPlayer2.classList.add(`winner-player2--hidden`);
   winnerText.style.opacity="0";
+}
 
-  //reset color in score player 
-  document.getElementsByClassName('score-player1')[0].classList.remove('is-success');
-  document.getElementsByClassName('score-player1')[0].classList.remove('is-error');
-  document.getElementsByClassName('score-player2')[0].classList.remove('is-success');
-  document.getElementsByClassName('score-player2')[0].classList.remove('is-error');
+/////////////////////////
+//  Reset Color Score  //
+/////////////////////////
 
-  //reset color in input max score
+
+function resetColorScore() {
+  
+  pScorePlayer1.classList.remove('is-success');
+  pScorePlayer1.classList.remove('is-error');
+  pScorePlayer2.classList.remove('is-success');
+  pScorePlayer2.classList.remove('is-error');
+
   inputMaxScore.classList.remove('is-success');
   inputMaxScore.value = "";
 }
 
-function changeMaxScore() {
-  let valueInputMaxScore = document.getElementsByClassName('input-max-score')[0].value;
+/////////////////
+//  Reset All  //
+/////////////////
+
+
+function resetAll() {
   resetScore();
+  resetButton();
+  resetWinnerChara();
+  resetColorScore();
+}
+
+////////////////////////
+//  Change Max Score  //
+////////////////////////
+
+function changeMaxScore() {
+  let valueInputMaxScore = inputMaxScore.value;
+  resetScore();
+  resetButton();
+  resetWinnerChara();
+  resetColorScore();
   maxScore.innerHTML = valueInputMaxScore;
   inputMaxScore.classList.remove('is-error');
   inputMaxScore.classList.add('is-success');
 }
 
+///////////////////////
+//  Check Max Score  //
+///////////////////////
+
 function checkMaxScore() {
-  if(inputMaxScore.value == "" || inputMaxScore.value < 0) {
+  if(inputMaxScore.value == "" || inputMaxScore.value < 1) {
     inputMaxScore.classList.remove('is-success');
     inputMaxScore.classList.add('is-error');
   }  else {
@@ -120,18 +173,36 @@ function checkMaxScore() {
 ////////////////////////////////////////////////////////////////////////
 
 
+////////////////////////////////////////////////
+//  input max score event onkeypress (enter)  //
+////////////////////////////////////////////////
+
+  
 inputMaxScore.onkeypress = function(event) {
   if (event.which == 13 || event.keyCode == 13) {
     checkMaxScore();
   }
 };
 
+//////////////////////////////////////
+//  input max score event onchange  //
+//////////////////////////////////////
+
+
 inputMaxScore.onchange = function(event) {
   checkMaxScore();
 };
 
+///////////////////////////////
+//  event button player 1/2  //
+///////////////////////////////
+
 
 buttonPlayer1.onclick = clickButtonPlayer1;
 buttonPlayer2.onclick = clickButtonPlayer2;
+
+//////////////////////////
+//  event button reset  //
+//////////////////////////
 
 buttonReset.onclick = resetAll;
