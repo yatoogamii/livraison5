@@ -59,22 +59,25 @@ function clickButtonPlayer2() {
   document.getElementsByClassName('score-player2')[0].innerHTML = scorePlayer2; 
 }
 
+function resetScore() {
+
+  scorePlayer1 = 0;
+  scorePlayer2 = 0;
+
+  maxScore.innerHTML = "5";
+
+  document.getElementsByClassName('score-player1')[0].innerHTML = scorePlayer1; 
+  document.getElementsByClassName('score-player2')[0].innerHTML = scorePlayer2; 
+}
+
 function resetAll() {
+
+  resetScore();
 
   //reset onclick for button
   buttonPlayer1.onclick = clickButtonPlayer1;
   buttonPlayer2.onclick = clickButtonPlayer2;
 
-  //reset score player
-  scorePlayer1 = 0;
-  scorePlayer2 = 0;
-
-  //reset value input score max and score max
-  maxScore.innerHTML = "5";
-
-  //reset score player in html
-  document.getElementsByClassName('score-player1')[0].innerHTML = scorePlayer1; 
-  document.getElementsByClassName('score-player2')[0].innerHTML = scorePlayer2; 
 
   //reset button player 
   buttonPlayer1.classList.remove("is-disabled");
@@ -98,7 +101,7 @@ function resetAll() {
 
 function changeMaxScore() {
   let valueInputMaxScore = document.getElementsByClassName('input-max-score')[0].value;
-  resetAll();
+  resetScore();
   maxScore.innerHTML = valueInputMaxScore;
   inputMaxScore.classList.remove('is-error');
   inputMaxScore.classList.add('is-success');
