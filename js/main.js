@@ -57,6 +57,39 @@ function clickButtonPlayer2() {
   document.getElementsByClassName('score-player2')[0].innerHTML = scorePlayer2; 
 }
 
+function resetAll() {
+
+  //reset onclick for button
+  buttonPlayer1.onclick = clickButtonPlayer1;
+  buttonPlayer2.onclick = clickButtonPlayer2;
+
+  //reset score player
+  scorePlayer1 = 0;
+  scorePlayer2 = 0;
+
+  //reset value input score max and score max
+  maxScore.innerHTML = "5";
+
+  //reset score player in html
+  document.getElementsByClassName('score-player1')[0].innerHTML = scorePlayer1; 
+  document.getElementsByClassName('score-player2')[0].innerHTML = scorePlayer2; 
+
+  //reset button player 
+  buttonPlayer1.classList.remove("is-disabled");
+  buttonPlayer2.classList.remove("is-disabled");
+
+  //reset winner character
+  characPlayer1.classList.add(`winner-player1--hidden`);
+  characPlayer2.classList.add(`winner-player2--hidden`);
+  winnerText.style.opacity="0";
+
+  //reset color in score player 
+  document.getElementsByClassName('score-player1')[0].classList.remove('is-success');
+  document.getElementsByClassName('score-player1')[0].classList.remove('is-error');
+  document.getElementsByClassName('score-player2')[0].classList.remove('is-success');
+  document.getElementsByClassName('score-player2')[0].classList.remove('is-error');
+}
+
 ////////////////////////////////////////////////////////////////////////
 //                               event                                //
 ////////////////////////////////////////////////////////////////////////
@@ -66,43 +99,11 @@ function clickButtonPlayer2() {
     if (event.which == 13 || event.keyCode == 13) {
       let valueInputMaxScore = document.getElementsByClassName('input-max-score')[0].value;
       maxScore.innerHTML = valueInputMaxScore;
+      resetAll();
     }
   };
 
-  buttonPlayer1.onclick = clickButtonPlayer1;
-  buttonPlayer2.onclick = clickButtonPlayer2;
+buttonPlayer1.onclick = clickButtonPlayer1;
+buttonPlayer2.onclick = clickButtonPlayer2;
 
-
-  buttonReset.onclick = function() {
-
-    //reset onclick for button
-    buttonPlayer1.onclick = clickButtonPlayer1;
-    buttonPlayer2.onclick = clickButtonPlayer2;
-
-    //reset score player
-    scorePlayer1 = 0;
-    scorePlayer2 = 0;
-
-    //reset value input score max and score max
-    maxScore.innerHTML = "5";
-    document.getElementsByClassName('input-max-score')[0].value = 5;
-
-    //reset score player in html
-    document.getElementsByClassName('score-player1')[0].innerHTML = scorePlayer1; 
-    document.getElementsByClassName('score-player2')[0].innerHTML = scorePlayer2; 
-
-    //reset button player 
-    buttonPlayer1.classList.remove("is-disabled");
-    buttonPlayer2.classList.remove("is-disabled");
-
-    //reset winner character
-    characPlayer1.classList.add(`winner-player1--hidden`);
-    characPlayer2.classList.add(`winner-player2--hidden`);
-    winnerText.style.opacity="0";
-
-    //reset color in score player 
-    document.getElementsByClassName('score-player1')[0].classList.remove('is-success');
-    document.getElementsByClassName('score-player1')[0].classList.remove('is-error');
-    document.getElementsByClassName('score-player2')[0].classList.remove('is-success');
-    document.getElementsByClassName('score-player2')[0].classList.remove('is-error');
-  };
+buttonReset.onclick = resetAll;
