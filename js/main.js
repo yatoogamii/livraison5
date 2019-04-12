@@ -16,6 +16,7 @@ let scorePlayer2 = 0;
 const winnerText = document.getElementsByClassName('p-winner')[0];
 const characPlayer1 = document.getElementsByClassName('winner-player1')[0];
 const characPlayer2 = document.getElementsByClassName('winner-player2')[0];
+const buttonDarkMode = document.getElementsByClassName('button-dark-mode')[0];
 
 ////////////////////////////////////////////////////////////////////////
 //                              function                              //
@@ -73,6 +74,18 @@ function clickButtonPlayer2() {
   pScorePlayer2.innerHTML = scorePlayer2; 
 }
 
+function toggleDarkMode() {
+  const body = document.getElementsByTagName('body')[0];
+  const containerMaxScore = document.getElementsByClassName('container-max-score')[0];
+  const containerButton = document.getElementsByClassName('container-button')[0];
+  console.log(containerMaxScore);
+
+  body.classList.toggle('dark-mode');
+  containerMaxScore.classList.toggle('is-dark');
+  containerButton.classList.toggle('is-dark');
+
+
+}
 ///////////////////
 //  Reset Score  //
 ///////////////////
@@ -206,3 +219,9 @@ buttonPlayer2.onclick = clickButtonPlayer2;
 //////////////////////////
 
 buttonReset.onclick = resetAll;
+
+//////////////////////////////
+//  event button dark mode  //
+//////////////////////////////
+
+buttonDarkMode.onclick = toggleDarkMode;
