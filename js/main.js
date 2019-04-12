@@ -98,8 +98,8 @@ function resetAll() {
   inputMaxScore.onkeypress = function(event) {
     if (event.which == 13 || event.keyCode == 13) {
       let valueInputMaxScore = document.getElementsByClassName('input-max-score')[0].value;
-      maxScore.innerHTML = valueInputMaxScore;
       resetAll();
+      maxScore.innerHTML = valueInputMaxScore;
     }
   };
 
