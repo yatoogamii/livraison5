@@ -2,86 +2,114 @@
   padding: 0;
   margin: 0;
   border: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
-  body header {
-    height: 12rem;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    body header h1 {
-      font-size: 5rem; }
-  body .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center; }
-  body .container-max-score {
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    body .container-max-score .container-input-max-score {
-      width: 25%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; }
-      body .container-max-score .container-input-max-score .input-max-score {
-        width: 50%; }
-    body .container-max-score .max-score {
-      width: 25%;
-      font-size: 5rem; }
-    body .container-max-score .container-winner {
-      width: 25%; }
-      body .container-max-score .container-winner .winner-player1--hidden {
-        display: none; }
-      body .container-max-score .container-winner .winner-player2--hidden {
-        display: none; }
-      body .container-max-score .container-winner .p-winner--hidden {
-        opacity: 0; }
-  body .container-panel-score {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center; }
-  body .container-panel-score__div-character-player {
-    width: 100%;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    font-size: 3rem; }
-    body .container-panel-score__div-character-player .container-panel-score__div-character-player-p {
-      display: flex;
-      align-items: flex-end;
-      font-size: 5rem; }
-    body .container-panel-score__div-character-player .container-panel-score__div-character-player1 {
-      width: 20%; }
-    body .container-panel-score__div-character-player .container-panel-score__div-character-player2 {
-      width: 20%; }
+  justify-content: space-between;
+  background-color: #efefef;
+}
+body header {
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body header h1 {
+  font-size: 5rem;
+}
+body .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+body .container-max-score {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .container-max-score .container-input-max-score {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .container-max-score .container-input-max-score .input-max-score {
+  width: 50%;
+}
+body .container-max-score .max-score {
+  width: 25%;
+  font-size: 5rem;
+}
+body .container-max-score .container-winner {
+  width: 25%;
+}
+body .container-max-score .container-winner .winner-player1--hidden {
+  display: none;
+}
+body .container-max-score .container-winner .winner-player2--hidden {
+  display: none;
+}
+body .container-max-score .container-winner .p-winner--hidden {
+  opacity: 0;
+}
+body .container-panel-score {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+body .container-panel-score__div-character-player {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+body .container-panel-score__div-character-player .container-panel-score__div-character-player-p {
+  display: flex;
+  align-items: flex-end;
+  font-size: 5rem;
+}
+body .container-panel-score__div-character-player .container-panel-score__div-character-player1 {
+  width: 20%;
+}
+body .container-panel-score__div-character-player .container-panel-score__div-character-player2 {
+  width: 20%;
+}
 
 .container-button {
   position: relative;
   bottom: 5%;
   width: 60%;
   display: flex;
-  flex-wrap: wrap; }
-  .container-button .container-button-player {
-    width: 100%; }
-  .container-button .container-button-reset {
-    margin-top: 1rem;
-    width: 100%; }
+  flex-wrap: wrap;
+}
+.container-button .container-button-player {
+  width: 100%;
+}
+.container-button .container-button-reset {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.dark-mode {
+  background-color: #212529;
+  color: #efefef;
+}
 
 /*# sourceMappingURL=style.css.map */

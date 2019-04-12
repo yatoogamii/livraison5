@@ -36,8 +36,8 @@ function verifyWinner(score, player) {
         break;
       case 'player2':
         characPlayer2.classList.remove(`winner-player2--hidden`);
-        pScorePlayer2.classList.add('is-success');
-        pScorePlayer1.classList.add('is-error');
+        pScorePlayer2.classList.add('nes-text', 'is-success');
+        pScorePlayer1.classList.add('nes-text', 'is-error');
         break;
     }
     winnerText.style.opacity="1";
