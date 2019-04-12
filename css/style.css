@@ -107,6 +107,11 @@ body .container-panel-score__div-character-player .container-panel-score__div-ch
   width: 100%;
 }
 
+.container-dark-mode {
+  position: absolute;
+  right: 2.5%;
+}
+
 .dark-mode {
   background-color: #212529;
   color: #efefef;
