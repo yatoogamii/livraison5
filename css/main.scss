@@ -138,7 +138,8 @@ body {
   .container-button {
     position: relative;
     bottom: 5%;
-    width: 60%;
+    width: 40%;
+    min-width: 40rem;
     display: flex;
     flex-wrap: wrap;
 
@@ -151,7 +152,14 @@ body {
     }
   }
 
-
+  //////////////////////
+  //  section social  //
+  //////////////////////
+  
+  .container-social {
+    position: absolute;
+    left: 2.5%;
+  }
 
 ////////////////////////////////////////////////////////////////////////
 //                             dark mode                              //

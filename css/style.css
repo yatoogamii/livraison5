@@ -95,7 +95,8 @@ body .container-panel-score__div-character-player .container-panel-score__div-ch
 .container-button {
   position: relative;
   bottom: 5%;
-  width: 60%;
+  width: 40%;
+  min-width: 40rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -105,6 +106,11 @@ body .container-panel-score__div-character-player .container-panel-score__div-ch
 .container-button .container-button-reset {
   margin-top: 1rem;
   width: 100%;
+}
+
+.container-social {
+  position: absolute;
+  left: 2.5%;
 }
 
 .container-dark-mode {
