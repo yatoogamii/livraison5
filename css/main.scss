@@ -36,6 +36,14 @@ body {
     }
   }
 
+  .footer {
+    position: relative;
+    bottom: 5%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+  }
+
 ////////////////////////////////////////////////////////////////////////
 //                             components                             //
 ////////////////////////////////////////////////////////////////////////
@@ -136,8 +144,6 @@ body {
   //////////////////////
   
   .container-button {
-    position: relative;
-    bottom: 5%;
     width: 40%;
     min-width: 40rem;
     display: flex;
@@ -159,6 +165,26 @@ body {
   .container-social {
     position: absolute;
     left: 2.5%;
+  }
+
+  ///////////////////////////////////////
+  //  section copyright and framework  //
+  ///////////////////////////////////////
+  
+  .container-copyright {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    max-width: 35rem;
+    height: 15.2rem;
+  }
+
+  .container-framework {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    max-width: 35rem;
+    height: 15.2rem;
   }
 
 ////////////////////////////////////////////////////////////////////////
