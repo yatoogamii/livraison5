@@ -83,6 +83,8 @@ function toggleDarkMode() {
   body.classList.toggle('dark-mode');
   containerMaxScore.classList.toggle('is-dark');
   containerButton.classList.toggle('is-dark');
+  (buttonDarkMode.innerHTML == "Light") ? buttonDarkMode.innerHTML="Dark" : buttonDarkMode.innerHTML="Light";
+
 
 
 }
