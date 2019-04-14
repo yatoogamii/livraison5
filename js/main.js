@@ -78,11 +78,15 @@ function toggleDarkMode() {
   const body = document.getElementsByTagName('body')[0];
   const containerMaxScore = document.getElementsByClassName('container-max-score')[0];
   const containerButton = document.getElementsByClassName('container-button')[0];
+  const containerCopy = document.getElementsByClassName('container-copyright')[0];
+  const containerFramework = document.getElementsByClassName('container-framework')[0];
   console.log(containerMaxScore);
 
   body.classList.toggle('dark-mode');
   containerMaxScore.classList.toggle('is-dark');
   containerButton.classList.toggle('is-dark');
+  containerCopy.classList.toggle('is-dark');
+  containerFramework.classList.toggle('is-dark');
   (buttonDarkMode.innerHTML == "Light") ? buttonDarkMode.innerHTML="Dark" : buttonDarkMode.innerHTML="Light";
 
 
